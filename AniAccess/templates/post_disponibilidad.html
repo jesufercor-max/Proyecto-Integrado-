@@ -1,0 +1,65 @@
+<main class="contenedor">
+    <!-- Tabla Estilizada -->
+    <table class="tabla-disponibilidad">
+        <thead>
+            <tr>
+                <th>Idioma del audio</th>
+                <th>Doblaje</th>
+                <th>Activo</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for disponibilidad in mostrar_post_disponibilidad %}
+            <tr>
+                <td>{{ disponibilidad.idioma_audio }}</td>
+                <td><strong>{{ disponibilidad.doblaje }}</strong></td>
+                <td>{{ disponibilidad.activo }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</main>
+
+<div class="regreso">
+<a href="{% url 'index' %}">Volver</a>
+</div>
+
+<!-- Estilos CSS para que quede bonita -->
+<style>
+    .contenedor {
+        max-width: 1000px;
+        margin: 20px auto;
+        padding: 0 20px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .tabla-disponibilidad {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        border-radius: 8px 8px 0 0;
+        overflow: hidden;
+    }
+    .tabla-disponibilidad thead tr {
+        background-color: #009879;
+        color: #ffffff;
+        text-align: left;
+        font-weight: bold;
+    }
+    .tabla-disponibilidad th, .tabla-disponibilidad td {
+        padding: 12px 15px;
+    }
+    .tabla-disponibilidad tbody tr {
+        border-bottom: 1px solid #dddddd;
+    }
+    .tabla-disponibilidad tbody tr:nth-of-type(even) {
+        background-color: #f3f3f3;
+    }
+    .tabla-disponibilidad tbody tr:last-of-type {
+        border-bottom: 2px solid #009879;
+    }
+    .regreso a{
+        color: #008000;
+    }
+</style>
